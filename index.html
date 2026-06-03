@@ -371,6 +371,7 @@
     3: "Process Concept, Memory Layout, Process Scheduling, Creation & Termination",
     4: "Interprocess Communication, Shared Memory, Message Passing, Sockets & RPC",
     5: "CPU Scheduling Criteria, Preemption, Scheduling Algorithms"
+    6: "Linux Fundamentals: Basic Commands & File System Navigation"
 };
 
     // --- Quiz Data Structure ---
@@ -559,7 +560,39 @@
     { question: "How does a Multilevel Feedback Queue resolve the rigidness of a standard Multilevel Queue?", options: ["It eliminates the time quantum entirely", "It allows processes to dynamically move between queues based on their execution history, separating I/O-bound and CPU-bound processes", "It merges all queues into a single FCFS queue", "It forces all processes into a single Round Robin queue"], answer: "It allows processes to dynamically move between queues based on their execution history, separating I/O-bound and CPU-bound processes" },
     { question: "If an algorithm's Gantt chart shows process P1 running from 0 to 4, P2 from 4 to 7, and P3 from 7 to 10, what is the exact waiting time for P3?", options: ["0", "4", "7", "10"], answer: "7" }
 
-        ]
+        ],
+        6: [
+            { question: "Which command is used to display the current absolute path of the directory you are in?", options: ["cd", "pwd", "dir", "path"], answer: "pwd" },
+    { question: "What command lists the files and folders inside a directory?", options: ["list", "show", "ls", "dir"], answer: "ls" },
+    { question: "How do you list all files in a directory, including hidden files?", options: ["ls -h", "ls -l", "ls -all", "ls -a"], answer: "ls -a" },
+    { question: "In Linux, what character does a hidden file or hidden directory name always begin with?", options: ["*", ".", "-", "_"], answer: "." },
+    { question: "Which command allows you to change your current working directory?", options: ["ch", "cd", "chdir", "dir"], answer: "cd" },
+    { question: "What is the shortcut command to navigate directly back to your user's home directory?", options: ["cd /", "cd ..", "cd ~", "cd -"], answer: "cd ~" },
+    { question: "Which command is used to navigate exactly one directory level up (to the parent directory)?", options: ["cd /", "cd ..", "cd -", "cd ."], answer: "cd .." },
+    { question: "What command creates a brand new directory?", options: ["mkdir", "makedir", "md", "newdir"], answer: "mkdir" },
+    { question: "Which command is used to safely remove an EMPTY directory?", options: ["rm", "rmdir", "del", "remove"], answer: "rmdir" },
+    { question: "How do you delete a standard text file in Linux?", options: ["del", "erase", "rm", "delete"], answer: "rm" },
+    { question: "Which flag is required with the 'rm' command to forcefully delete a directory and all of the files inside it?", options: ["-f", "-d", "-a", "-r"], answer: "-r" },
+    { question: "What command is used to copy files or directories from one location to another?", options: ["copy", "c", "cp", "dup"], answer: "cp" },
+    { question: "Which command is used to either move a file to a new location OR rename an existing file?", options: ["mv", "move", "rn", "rename"], answer: "mv" },
+    { question: "What command is commonly used to quickly create a new, empty file without opening an editor?", options: ["create", "make", "touch", "new"], answer: "touch" },
+    { question: "Which command outputs the entire contents of a text file directly to the terminal screen?", options: ["cat", "read", "show", "print"], answer: "cat" },
+    { question: "If a text file is very long, which command lets you comfortably view its contents one page at a time?", options: ["less", "cat", "tail", "scroll"], answer: "less" },
+    { question: "What command displays only the first 10 lines of a file by default?", options: ["top", "start", "head", "begin"], answer: "head" },
+    { question: "Which command displays the last 10 lines of a file, making it extremely useful for reading recent system logs?", options: ["tail", "end", "bottom", "last"], answer: "tail" },
+    { question: "What command searches through text files to find a specific word or pattern?", options: ["find", "search", "grep", "locate"], answer: "grep" },
+    { question: "Which command is used to search for actual files and directories within the file system hierarchy?", options: ["find", "search", "grep", "whereis"], answer: "find" },
+    { question: "How do you access the official built-in manual or help pages for a specific Linux command (e.g., to learn how 'ls' works)?", options: ["help [command]", "man [command]", "info [command]", "doc [command]"], answer: "man [command]" },
+    { question: "Which command prints the text you type after it directly back to the terminal screen?", options: ["print", "show", "echo", "say"], answer: "echo" },
+    { question: "What command modifies the read, write, and execute permissions of a file?", options: ["chown", "chmod", "attrib", "set"], answer: "chmod" },
+    { question: "Which command is used to change the owner of a file or directory?", options: ["chown", "chmod", "su", "user"], answer: "chown" },
+    { question: "What command temporarily elevates your privileges to execute administrative or 'root' level tasks?", options: ["admin", "root", "su", "sudo"], answer: "sudo" },
+    { question: "Which command displays a static snapshot of the currently running processes on your system?", options: ["processes", "ps", "tasklist", "jobs"], answer: "ps" },
+    { question: "What command provides a real-time, dynamic, and constantly updating view of running processes and system resource usage (like CPU and RAM)?", options: ["top", "ps", "monitor", "sys"], answer: "top" },
+    { question: "Which command is used to forcefully terminate a running process using its Process ID (PID)?", options: ["stop", "end", "kill", "terminate"], answer: "kill" },
+    { question: "What command displays the amount of available and used disk space on your file systems?", options: ["du", "df", "disk", "space"], answer: "df" },
+    { question: "Which command clears all previous output from your terminal screen to give you a clean workspace?", options: ["clean", "cls", "clear", "wipe"], answer: "clear" }
+            ]
     };
 
     // ==========================================
@@ -612,7 +645,7 @@
         const list = document.getElementById('chapter-list');
         list.innerHTML = ''; 
         
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 6; i++) {
             const btn = document.createElement('button');
             btn.className = 'chapter-btn';
             const cName = chapterNames[i] || `Topic ${i}`;
